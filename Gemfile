@@ -53,10 +53,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
+gem 'devise'
 
 group :development do
   gem 'better_errors'
@@ -84,4 +85,3 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
-
