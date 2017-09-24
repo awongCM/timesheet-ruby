@@ -59,6 +59,9 @@ gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 
+#added Bootstrap theme
+gem 'gentelella-rails'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
