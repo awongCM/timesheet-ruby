@@ -1,0 +1,16 @@
+%h2 Log in
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  .field
+    = f.label :username
+    %br/
+    = f.text_field :username
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "off"
+  .actions
+    = f.submit "Login"
+= render "devise/shared/links"
