@@ -1,2 +1,12 @@
-%h1 Hello Rails
-//- TODO - determine landing page
+
+- if user_signed_in?
+    %h1 Welcome back user!
+    .employee-list
+        %ul
+            %li
+                = link_to 'Add New Employee', new_employee_path
+            %li
+                = link_to 'Employee List', employees_path
+- else
+    %h1 Welcome to Rails
+

@@ -1,0 +1,12 @@
+%h1 Employee Details
+%p
+    %strong Title:
+    = @employee.title  
+%p
+    %strong First Name:
+    = @employee.first_name 
+%p
+    %strong Last Name:
+    = @employee.last_name
+%p
+    = link_to 'Back', employees_path
