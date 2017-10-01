@@ -5,5 +5,3 @@
 3. List of Timesheets
 4. Report of submitted timesheets
 5. Graph display of submitted timesheets
-
-
