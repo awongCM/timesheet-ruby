@@ -1,24 +1,9 @@
-# README
+# README - TODO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Authentication Logons
+2. Timesheet Forms
+3. List of Timesheets
+4. Report of submitted timesheets
+5. Graph display of submitted timesheets
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
