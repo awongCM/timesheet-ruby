@@ -1,25 +1,47 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :username
-    %br/
-    = f.text_field :username, autofocus: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.login_wrapper
+  .animate.form.login_form
+    %section.login_content
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        %h1 Sign Up
+        = devise_error_messages!
+        %div
+          = f.text_field :username, autofocus: true, class: "form-control", placeholder: "Username"
+        %div
+          = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
+        %div
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+        %div
+          = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Password(confirmation)"
+        %div
+          = f.submit "Sign up", class: "btn btn-default submit"
+          - if controller_name != 'sessions'
+            = link_to "Log in", new_session_path(resource_name), class: "reset_pass"
+        .clearfix
+        .separator
+          %div
+            %p ©2017 All Rights Reserved. Privacy and Terms
+  #register.animate.form.registration_form
+    %section.login_content
+      %form
+        %h1 Create Account
+        %div
+          %input.form-control{:placeholder => "Username", :required => "", :type => "text"}/
+        %div
+          %input.form-control{:placeholder => "Email", :required => "", :type => "email"}/
+        %div
+          %input.form-control{:placeholder => "Password", :required => "", :type => "password"}/
+        %div
+          %a.btn.btn-default.submit{:href => "index.html"} Submit
+        .clearfix
+        .separator
+          %p.change_link
+            Already a member ?
+            %a.to_register{:href => "#signin"} Log in
+          .clearfix
+          %br/
+          %div
+            %p ©2017 All Rights Reserved. Privacy and Terms
