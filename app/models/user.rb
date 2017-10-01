@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessor :email, :password, :password_confirmation, :remember_me, :username
-  validates_presence_of :username
+  validates :username, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
 
 end
