@@ -1,6 +1,6 @@
 
 - if user_signed_in?
-    %h1 Welcome back user!
+    %h1 Welcome back #{current_user.username}
     .employee-list
         %ul
             %li
