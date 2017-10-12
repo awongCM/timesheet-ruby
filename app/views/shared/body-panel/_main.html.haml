@@ -1,0 +1,251 @@
+.right_col
+  %div
+    .page-title
+      .title_left
+        %h3 User Profile
+      .title_right
+        .col-md-5.col-sm-5.col-xs-12.form-group.pull-right.top_search
+          .input-group
+            %input.form-control{:placeholder => "Search for...", :type => "text"}/
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button"} Go!
+    .clearfix
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        .x_panel
+          .x_title
+            %h2
+              User Report
+              %small Activity report
+            %ul.nav.navbar-right.panel_toolbox
+              %li
+                %a.collapse-link
+                  %i.fa.fa-chevron-up
+              %li.dropdown
+                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  %i.fa.fa-wrench
+                %ul.dropdown-menu{:role => "menu"}
+                  %li
+                    %a{:href => "#"} Settings 1
+                  %li
+                    %a{:href => "#"} Settings 2
+              %li
+                %a.close-link
+                  %i.fa.fa-close
+            .clearfix
+          .x_content
+            .col-md-3.col-sm-3.col-xs-12.profile_left
+              .profile_img
+                #crop-avatar
+                  / Current avatar
+                  %img.img-responsive.avatar-view{:alt => "Avatar", :src => "images/picture.jpg", :title => "Change the avatar"}/
+              %h3 Samuel Doe
+              %ul.list-unstyled.user_data
+                %li
+                  %i.fa.fa-map-marker.user-profile-icon
+                  San Francisco, California, USA
+                %li
+                  %i.fa.fa-briefcase.user-profile-icon
+                  Software Engineer
+                %li.m-top-xs
+                  %i.fa.fa-external-link.user-profile-icon
+                  %a{:href => "http://www.kimlabs.com/profile/", :target => "_blank"} www.kimlabs.com
+              %a.btn.btn-success
+                %i.fa.fa-edit.m-right-xs>
+                Edit Profile
+              %br/
+              / start skills
+              %h4 Skills
+              %ul.list-unstyled.user_data
+                %li
+                  %p Web Applications
+                  .progress.progress_sm
+                    .progress-bar.bg-green{"aria-valuenow" => "49", "data-transitiongoal" => "50", :role => "progressbar", :style => "width: 50%;"}
+                %li
+                  %p Website Design
+                  .progress.progress_sm
+                    .progress-bar.bg-green{"aria-valuenow" => "69", "data-transitiongoal" => "70", :role => "progressbar", :style => "width: 70%;"}
+                %li
+                  %p Automation & Testing
+                  .progress.progress_sm
+                    .progress-bar.bg-green{"aria-valuenow" => "29", "data-transitiongoal" => "30", :role => "progressbar", :style => "width: 30%;"}
+                %li
+                  %p UI / UX
+                  .progress.progress_sm
+                    .progress-bar.bg-green{"aria-valuenow" => "49", "data-transitiongoal" => "50", :role => "progressbar", :style => "width: 50%;"}
+              / end of skills
+            .col-md-9.col-sm-9.col-xs-12
+              .profile_title
+                .col-md-6
+                  %h2 User Activity Report
+                .col-md-6
+                  #reportrange.pull-right{:style => "margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED"}
+                    %i.glyphicon.glyphicon-calendar.fa.fa-calendar
+                    %span September 7, 2017 - October 6, 2017
+                    %b.caret
+              / start of user-activity-graph
+              #graph_bar{:style => "width: 100%; height: 280px; position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                %svg{:height => "280", :style => "overflow: hidden; position: relative;", :version => "1.1", :width => "823", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                  %desc{:style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} Created with Raphaël @@VERSION
+                  %defs{:style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "end", :x => "42.515625", :y => "213.3026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 0
+                  %path{:d => "M55.015625,213.3026007804375H798", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "end", :x => "42.515625", :y => "166.22695058532813"}
+                    %tspan{:dy => "4.258200585328126", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 750
+                  %path{:d => "M55.015625,166.22695058532813H798", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "end", :x => "42.515625", :y => "119.15130039021875"}
+                    %tspan{:dy => "4.260675390218751", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 1,500
+                  %path{:d => "M55.015625,119.15130039021875H798", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "end", :x => "42.515625", :y => "72.07565019510938"}
+                    %tspan{:dy => "4.263150195109375", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 2,250
+                  %path{:d => "M55.015625,72.07565019510938H798", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "end", :x => "42.515625", :y => "25"}
+                    %tspan{:dy => "4.25", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 3,000
+                  %path{:d => "M55.015625,25H798", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-4.3454,491.6199)", :x => "760.85078125", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} Other
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-39.1004,463.9269)", :x => "686.55234375", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 6S Plus
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-41.6113,413.6673)", :x => "612.25390625", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 6S
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-62.6967,376.4027)", :x => "537.95546875", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 6 Plus
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-65.2026,326.1341)", :x => "463.65703125", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 6
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-81.9234,285.8135)", :x => "389.35859375", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 5S
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-92.0783,240.8953)", :x => "315.06015625", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 5
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-112.6155,203.2633)", :x => "240.76171875", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 3GS
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-122.2327,157.9687)", :x => "166.46328125", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 4S
+                  %text{:fill => "#888888", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;", "text-anchor" => "middle", :transform => "matrix(0.8192,-0.5736,0.5736,0.8192,-132.3876,113.0505)", :x => "92.16484375", :y => "225.8026007804375"}
+                    %tspan{:dy => "4.255725780437501", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} iPhone 4
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "23.851662765522093", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "64.3029296875", :y => "189.4509380149154"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "41.11273450372886", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "138.60136718750002", :y => "172.18986627670864"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "17.261071738206766", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "212.89980468750002", :y => "196.04152904223074"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "98.60779527535577", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "287.19824218750006", :y => "114.69480550508173"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "41.11273450372886", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "361.49667968750003", :y => "172.18986627670864"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "135.20126736035414", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "435.7951171875", :y => "78.10133342008336"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "71.80605843094017", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "510.09355468750005", :y => "141.49654234949733"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "148.8218221501391", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "584.3919921875", :y => "64.4807786302984"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "92.33104191600786", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "658.6904296875", :y => "120.97155886442964"}
+                  %rect{:fill => "#26b99a", "fill-opacity" => "1", :height => "86.05428855665994", :rx => "0", :ry => "0", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;", :width => "55.723828125000004", :x => "732.9888671875", :y => "127.24831222377756"}
+                .morris-hover.morris-default-style{:style => "display: none;"}
+              / end of user-activity-graph
+              %div{"data-example-id" => "togglable-tabs", :role => "tabpanel"}
+                %ul#myTab.nav.nav-tabs.bar_tabs{:role => "tablist"}
+                  %li.active{:role => "presentation"}
+                    %a#home-tab{"aria-expanded" => "true", "data-toggle" => "tab", :href => "#tab_content1", :role => "tab"} Recent Activity
+                  %li{:role => "presentation"}
+                    %a#profile-tab{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#tab_content2", :role => "tab"} Projects Worked on
+                  %li{:role => "presentation"}
+                    %a#profile-tab2{"aria-expanded" => "false", "data-toggle" => "tab", :href => "#tab_content3", :role => "tab"} Profile
+                #myTabContent.tab-content
+                  #tab_content1.tab-pane.fade.active.in{"aria-labelledby" => "home-tab", :role => "tabpanel"}
+                    / start recent activity
+                    %ul.messages
+                      %li
+                        %img.avatar{:alt => "Avatar", :src => "images/img.jpg"}/
+                        .message_date
+                          %h3.date.text-info 24
+                          %p.month May
+                        .message_wrapper
+                          %h4.heading Desmond Davison
+                          %blockquote.message Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.
+                          %br/
+                          %p.url
+                            %span.fs1.text-info{"aria-hidden" => "true", "data-icon" => ""}
+                            %a{:href => "#"}
+                              %i.fa.fa-paperclip
+                              User Acceptance Test.doc
+                      %li
+                        %img.avatar{:alt => "Avatar", :src => "images/img.jpg"}/
+                        .message_date
+                          %h3.date.text-error 21
+                          %p.month May
+                        .message_wrapper
+                          %h4.heading Brian Michaels
+                          %blockquote.message Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.
+                          %br/
+                          %p.url
+                            %span.fs1{"aria-hidden" => "true", "data-icon" => ""}
+                            %a{"data-original-title" => "", :href => "#"} Download
+                      %li
+                        %img.avatar{:alt => "Avatar", :src => "images/img.jpg"}/
+                        .message_date
+                          %h3.date.text-info 24
+                          %p.month May
+                        .message_wrapper
+                          %h4.heading Desmond Davison
+                          %blockquote.message Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.
+                          %br/
+                          %p.url
+                            %span.fs1.text-info{"aria-hidden" => "true", "data-icon" => ""}
+                            %a{:href => "#"}
+                              %i.fa.fa-paperclip
+                              User Acceptance Test.doc
+                      %li
+                        %img.avatar{:alt => "Avatar", :src => "images/img.jpg"}/
+                        .message_date
+                          %h3.date.text-error 21
+                          %p.month May
+                        .message_wrapper
+                          %h4.heading Brian Michaels
+                          %blockquote.message Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.
+                          %br/
+                          %p.url
+                            %span.fs1{"aria-hidden" => "true", "data-icon" => ""}
+                            %a{"data-original-title" => "", :href => "#"} Download
+                    / end recent activity
+                  #tab_content2.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
+                    / start user projects
+                    %table.data.table.table-striped.no-margin
+                      %thead
+                        %tr
+                          %th #
+                          %th Project Name
+                          %th Client Company
+                          %th.hidden-phone Hours Spent
+                          %th Contribution
+                      %tbody
+                        %tr
+                          %td 1
+                          %td New Company Takeover Review
+                          %td Deveint Inc
+                          %td.hidden-phone 18
+                          %td.vertical-align-mid
+                            .progress
+                              .progress-bar.progress-bar-success{"aria-valuenow" => "35", "data-transitiongoal" => "35", :style => "width: 35%;"}
+                        %tr
+                          %td 2
+                          %td New Partner Contracts Consultanci
+                          %td Deveint Inc
+                          %td.hidden-phone 13
+                          %td.vertical-align-mid
+                            .progress
+                              .progress-bar.progress-bar-danger{"aria-valuenow" => "15", "data-transitiongoal" => "15", :style => "width: 15%;"}
+                        %tr
+                          %td 3
+                          %td Partners and Inverstors report
+                          %td Deveint Inc
+                          %td.hidden-phone 30
+                          %td.vertical-align-mid
+                            .progress
+                              .progress-bar.progress-bar-success{"aria-valuenow" => "45", "data-transitiongoal" => "45", :style => "width: 45%;"}
+                        %tr
+                          %td 4
+                          %td New Company Takeover Review
+                          %td Deveint Inc
+                          %td.hidden-phone 28
+                          %td.vertical-align-mid
+                            .progress
+                              .progress-bar.progress-bar-success{"aria-valuenow" => "75", "data-transitiongoal" => "75", :style => "width: 75%;"}
+                    / end user projects
+                  #tab_content3.tab-pane.fade{"aria-labelledby" => "profile-tab", :role => "tabpanel"}
+                    %p
+                      xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui
+                      photo booth letterpress, commodo enim craft beer mlkshk
+%footer
