@@ -3,14 +3,16 @@
     %h3 General
     %ul.nav.side-menu
       %li
-        %a
+        = link_to(profile_index_path) do
           %i.fa.fa-address-card
           Profile
       %li
-        %a
+        -# TODO
+        = link_to(timesheet_index_path) do
           %i.fa.fa-calendar
           Timesheet
       %li
-        %a
+        -# TODO
+        = link_to(reporting_index_path) do
           %i.fa.fa-line-chart            
           Reporting

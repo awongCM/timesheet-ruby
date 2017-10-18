@@ -5,23 +5,24 @@
     %title Timesheet Ruby
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body.nav-md{:class=>("login" unless user_signed_in?)}
     = render "shared/menu"
-    -# TODO - add global shared partials
-    -# .container.body
-    -#   .main_container
-    -#     .col-md-3.left_col
-    -#       .left_col.scroll-view
-    -#         = render "shared/sidebar/top"
-    -#         / menu profile quick info
-    -#         = render "shared/sidebar/profile"
-    -#         / sidebar menu
-    -#         = render "shared/sidebar/menu"
-    -#         / /sidebar menu
-    -#         / /menu footer buttons
-    -#         = render "shared/sidebar/footer"
-    -#         / /menu footer buttons
-    -#     = render "shared/top-navigation/main"
-    -#     = render "shared/body-panel/main"
-    = yield
+    - if user_signed_in?
+      .container.body
+        .main_container
+          .col-md-3.left_col
+            .left_col.scroll-view
+              = render "shared/sidebar/top"
+              / menu profile quick info
+              = render "shared/sidebar/profile"
+              / sidebar menu
+              = render "shared/sidebar/menu"
+              / /sidebar menu
+              / /menu footer buttons
+              = render "shared/sidebar/footer"
+              / /menu footer buttons
+          = render "shared/top-navigation/main"
+          = render "shared/body-panel/main"
+    - else #- Load other pages page
+      = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

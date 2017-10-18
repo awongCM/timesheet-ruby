@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :employees
+
+  # TODOS
+  resources :profile
+  resources :timesheet
+  resources :reporting
   
   root to: 'main#index'
 end
