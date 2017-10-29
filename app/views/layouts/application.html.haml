@@ -6,6 +6,7 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   %body.nav-md{:class=>("login" unless user_signed_in?)}
+    -# TODO - to be removed
     = render "shared/menu"
     - if user_signed_in?
       .container.body
