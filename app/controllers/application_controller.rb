@@ -4,6 +4,22 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  before_action :check_user_profile
+
+  private
+
+  ##TODO - global helper file
+  def check_user_profile
+    if(current_user)
+      if !Employee.exists?(:user_id => current_user.id)
+        flash.now[:alert] = "Employee id is missing"
+      else
+        flash.now[:notice] = "Current Employee"
+      end
+    end
+  end
+
+
   protected
 
   def configure_permitted_parameters

@@ -20,9 +20,9 @@
             %li
               %a{:href => "javascript:;"} Help
             %li
-              %a{:href => "login.html"}
+              = link_to(destroy_user_session_path, method: :delete) do
                 %i.fa.fa-sign-out.pull-right
-                Log Out
+                Log Out...
         //-TODO
         -# %li.dropdown{:role => "presentation"}
           %a.dropdown-toggle.info-number{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "javascript:;"}

@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true
 
-  #Associations - TODO
-  belongs_to :employee
+  belongs_to :employee, optional: true
 
 end
