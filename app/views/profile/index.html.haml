@@ -25,7 +25,7 @@
                 %img.img-responsive.avatar-view{:alt => "Avatar", :src => "images/picture.jpg", :title => "Change the avatar"}/
             %h3
               = current_user.username
-            - if !Employee.exists?(:user_id => current_user.id)
+            - if !userHasEmployeeProfile(current_user)
               = link_to(new_profile_path, :class => "btn btn-success") do
                 %i.fa.fa-edit.m-right-xs>
                 New Profile
@@ -56,7 +56,7 @@
                       %i.fa.fa-close
                 .clearfix
               
-              - if !Employee.exists?(:user_id => current_user.id)
+              - if !userHasEmployeeProfile(current_user)
                 .x_content
                   %br/
                   Your profile is not setup yet.  Please complete your profile setup 
