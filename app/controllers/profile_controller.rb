@@ -5,11 +5,17 @@ class ProfileController < ApplicationController
   end
 
   def new
+
     @employee = Employee.new
+    @profile_url_path = profile_index_path
+
   end
 
   def edit
+
     @employee = Employee.find(params[:id])
+    @profile_url_path = profile_path
+    
   end
   
   def create
