@@ -84,5 +84,5 @@ pickle-email-*.html
 *~
 
 #ignore junk files at root
-./*.haml
-./*.html
+/*.haml
+/*.html
