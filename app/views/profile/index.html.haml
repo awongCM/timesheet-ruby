@@ -22,7 +22,7 @@
             .profile_img
               #crop-avatar
                 / Current avatar
-                %img.img-responsive.avatar-view{:alt => "Avatar", :src => "images/picture.jpg", :title => "Change the avatar"}/
+                = image_tag("profile-default.png", :class => "img-responsive avatar-view", :title =>"Change your avatar", :alt => "Avatar")
             %h3
               = current_user.username
             - if !userHasEmployeeProfile(current_user)
