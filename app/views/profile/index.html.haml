@@ -23,8 +23,7 @@
               #crop-avatar
                 / Current avatar
                 = image_tag("profile-default.png", :class => "img-responsive avatar-view", :title =>"Change your avatar", :alt => "Avatar")
-            %h3
-              = current_user.username
+            %h3 #{@employee.first_name} #{@employee.last_name}
             - if !userHasEmployeeProfile(current_user)
               = link_to(new_profile_path, :class => "btn btn-success") do
                 %i.fa.fa-edit.m-right-xs>
