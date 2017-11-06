@@ -43,7 +43,7 @@ class ProfileController < ApplicationController
 
   private
   def employee_params
-      params.require(:employee).permit(:title, :first_name, :last_name).merge(user_id: current_user.id)
+      params.require(:employee).permit(:title, :first_name, :last_name, :date_of_birth, :job_title, :address).merge(user_id: current_user.id)
   end
 
 
