@@ -1,6 +1,6 @@
 .profile.clearfix
   .profile_pic
-    %img.img-circle.profile_img{:alt => "...", :src => "images/img.jpg"}/
+    = image_tag("profile-default.png", :class => "img-circle profile_img", :alt => "...")
   .profile_info
     %span Welcome
     %h2 #{current_user.username}
