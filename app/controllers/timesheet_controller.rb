@@ -5,10 +5,16 @@ class TimesheetController < ApplicationController
 
   def new
     @timesheet = Timesheet.new
+    @timesheet_url_path = timesheet_index_path
   end
 
   def edit
-    @timesheet = Timesheet.find(params[:id])    
+    @timesheet = Timesheet.find(params[:id])
+    @timesheet_url_path = timesheet_path
+  end
+
+  def show
+    # //TODOS
   end
 
   def create

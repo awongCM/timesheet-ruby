@@ -321,6 +321,7 @@
                       Delete
             / end project list
             / button
-            %button.btn.btn-success Log new timesheet
+            = link_to(new_timesheet_path, :class => "btn btn-success") do
+              Log new timesheet
             / end button
   
