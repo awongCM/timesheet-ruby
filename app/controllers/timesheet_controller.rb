@@ -1,6 +1,6 @@
 class TimesheetController < ApplicationController
   def index
-    
+    @timesheets = Timesheet.all
   end
 
   def new
@@ -14,10 +14,12 @@ class TimesheetController < ApplicationController
   end
 
   def show
-    # //TODOS
+    @timesheet = Timesheet.find(params[:id])
   end
 
   def create
+    # fetch employee id
+    @employee_id = Employee.find_by(user_id: current_user.id).id
     @timesheet = Timesheet.new(timesheet_params)
     @timesheet.save
 
@@ -26,6 +28,8 @@ class TimesheetController < ApplicationController
 
   def update
     @timesheet = Timesheet.find(params[:id])
+    # save current employee_id
+    @employee_id = @timesheet.employee_id
     
     if @timesheet.update(timesheet_params)
         redirect_to timesheet_index_path
@@ -45,7 +49,7 @@ class TimesheetController < ApplicationController
   # TODOS
   private
   def timesheet_params
-      params.require(:timesheet).permit(:title, :first_name, :last_name, :date_of_birth, :job_title, :address).merge(user_id: current_user.id)
+      params.require(:timesheet).permit(:title, :description, :entry_date, :total_hours, :status).merge(employee_id: @employee_id)
   end
 
 

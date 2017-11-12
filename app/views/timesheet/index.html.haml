@@ -33,292 +33,36 @@
                   %i.fa.fa-close
             .clearfix
           .x_content
-            -#TODO - Timesheet fields
             / start project list
             %table.table.table-striped.projects
               %thead
                 %tr
                   %th #
-                  %th Project Name
-                  %th Team Members
-                  %th Project Progress
+                  %th Title
+                  %th Description
+                  %th Entry Date
+                  %th Total Hours
                   %th Status
                   %th #Edit
               %tbody
+              - @timesheets.each do |timesheet|
                 %tr
                   %td #
+                  %td= timesheet.title
+                  %td= timesheet.description
+                  %td= timesheet.entry_date
+                  %td= timesheet.total_hours
+                  %td= timesheet.status
                   %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "56", "data-transitiongoal" => "57", :role => "progressbar", :style => "width: 57%;"}
-                    %small 57% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
+                    = link_to(timesheet_path(timesheet), :class => "btn btn-primary btn-xs") do 
                       %i.fa.fa-folder
                       View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
+                    = link_to(edit_timesheet_path(timesheet), :class=> "btn btn-info btn-xs") do 
                       %i.fa.fa-pencil
                       Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
+                    = link_to(timesheet_path(timesheet), :class=> "btn btn-danger btn-xs", method: :delete, data: {confirm: 'Are you sure you want to delete this timesheet?'}) do 
                       %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "46", "data-transitiongoal" => "47", :role => "progressbar", :style => "width: 47%;"}
-                    %small 47% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "76", "data-transitiongoal" => "77", :role => "progressbar", :style => "width: 77%;"}
-                    %small 77% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "59", "data-transitiongoal" => "60", :role => "progressbar", :style => "width: 60%;"}
-                    %small 60% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "11", "data-transitiongoal" => "12", :role => "progressbar", :style => "width: 12%;"}
-                    %small 12% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "34", "data-transitiongoal" => "35", :role => "progressbar", :style => "width: 35%;"}
-                    %small 35% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "86", "data-transitiongoal" => "87", :role => "progressbar", :style => "width: 87%;"}
-                    %small 87% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "76", "data-transitiongoal" => "77", :role => "progressbar", :style => "width: 77%;"}
-                    %small 77% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
-                %tr
-                  %td #
-                  %td
-                    %a Pesamakini Backend UI
-                    %br/
-                    %small Created 01.01.2015
-                  %td
-                    %ul.list-inline
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                      %li
-                        %img.avatar{:alt => "Avatar", :src => "images/user.png"}/
-                  %td.project_progress
-                    .progress.progress_sm
-                      .progress-bar.bg-green{"aria-valuenow" => "76", "data-transitiongoal" => "77", :role => "progressbar", :style => "width: 77%;"}
-                    %small 77% Complete
-                  %td
-                    %button.btn.btn-success.btn-xs{:type => "button"} Success
-                  %td
-                    %a.btn.btn-primary.btn-xs{:href => "#"}
-                      %i.fa.fa-folder
-                      View
-                    %a.btn.btn-info.btn-xs{:href => "#"}
-                      %i.fa.fa-pencil
-                      Edit
-                    %a.btn.btn-danger.btn-xs{:href => "#"}
-                      %i.fa.fa-trash-o
-                      Delete
+                      Delete      
             / end project list
             / button
             = link_to(new_timesheet_path, :class => "btn btn-success") do

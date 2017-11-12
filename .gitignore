@@ -86,3 +86,4 @@ pickle-email-*.html
 #ignore junk files at root
 /*.haml
 /*.html
+.byebug_history

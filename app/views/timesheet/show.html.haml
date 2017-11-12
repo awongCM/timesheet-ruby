@@ -1,0 +1,46 @@
+-# TODO - DRY THE VIEWS
+%div
+  .page-title
+    .title_left
+      %h3 Timesheets
+    .title_right
+      .col-md-5.col-sm-5.col-xs-12.form-group.pull-right.top_search
+        .input-group
+          %input.form-control{:placeholder => "Search for...", :type => "text"}/
+          %span.input-group-btn
+            %button.btn.btn-default{:type => "button"} Go!
+  .clearfix
+  .row
+    .col-md-12.col-sm-12.col-xs-12
+      .x_panel
+        .x_title
+          %h2
+            View timesheet
+          .clearfix
+        .x_content
+          %br/
+          = form_with model: @timesheet, url: @timesheet_url_path, local: true, class: "form-horizontal form-label-left" do |form|
+            .form-group
+              = form.label(:title, "Title", class: "control-label col-md-3 col-sm-3 col-xs-12")
+              .col-md-6.col-sm-6.col-xs-12
+                = form.text_field(:title, id: "title", class: "form-control col-md-7 col-xs-12", disabled: "disabled")
+            .form-group
+              = form.label(:descripton, "Description", class: "control-label col-md-3 col-sm-3 col-xs-12")
+              .col-md-6.col-sm-6.col-xs-12
+                = form.text_field(:description, id: "description", class: "form-control col-md-7 col-xs-12", disabled: "disabled")
+            .form-group
+              = form.label(:entry_date, "Entry Date", class: "control-label col-md-3 col-sm-3 col-xs-12")
+              .col-md-6.col-sm-6.col-xs-12
+                = form.text_field(:entry_date, id: "entry_date", class: "form-control col-md-7 col-xs-12", disabled: "disabled")
+            .form-group
+              = form.label(:total_hours, "Total Hours", class: "control-label col-md-3 col-sm-3 col-xs-12")
+              .col-md-6.col-sm-6.col-xs-12
+                = form.text_field(:total_hours, id: "total_hours", class: "form-control col-md-7 col-xs-12", disabled: "disabled")
+            .form-group
+              = form.label(:status, "Status", class: "control-label col-md-3 col-sm-3 col-xs-12")
+              .col-md-6.col-sm-6.col-xs-12
+                = form.text_field(:status, id: "status", class: "form-control col-md-7 col-xs-12", disabled: "disabled")
+            .ln_solid
+            .form-group
+              .col-md-6.col-sm-6.col-xs-12.col-md-offset-3
+                = link_to("Return to table", timesheet_index_path, class: "btn btn-primary")
