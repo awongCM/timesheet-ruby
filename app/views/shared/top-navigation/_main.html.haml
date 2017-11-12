@@ -12,7 +12,8 @@
             %span.fa.fa-angle-down
           %ul.dropdown-menu.dropdown-usermenu.pull-right
             %li
-              %a{:href => "javascript:;"} Profile
+              = link_to(profile_index_path) do
+                Profile
             %li
               %a{:href => "javascript:;"}
                 %span.badge.bg-red.pull-right 50%
