@@ -12,3 +12,5 @@
 //
 //= require gentelella
 //= require gentelella-custom
+//= require jquery-readyselector
+//= require_tree .
