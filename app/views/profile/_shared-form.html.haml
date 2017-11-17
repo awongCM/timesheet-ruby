@@ -1,3 +1,20 @@
+//TODO - user model form to submit
+%form.form-horizontal.form-label-left
+  .form-group
+    .control-label.col-md-3.col-sm-3.col-xs-12
+    .col-md-6.col-sm-6.col-xs-12
+      %h5 Profile Information
+  .form-group
+    %label.control-label.col-md-3.col-sm-3.col-xs-12 Username
+    .col-md-6.col-sm-6.col-xs-12
+      %input.form-control(readonly="readonly" type="text" value="#{current_user.username}")
+  .form-group
+    %label.control-label.col-md-3.col-sm-3.col-xs-12 Email Address
+    .col-md-6.col-sm-6.col-xs-12
+      %input.form-control(readonly="readonly" type="text" value="#{current_user.email}")
+
+.ln_solid
+
 = form_with model: @employee, url: @profile_url_path, local: true, id: "demo-form2", class: "form-horizontal form-label-left" do |form|
   .form-group
     .control-label.col-md-3.col-sm-3.col-xs-12
