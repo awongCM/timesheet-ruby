@@ -25,11 +25,11 @@
                 = image_tag("profile-default.png", :class => "img-responsive avatar-view", :title =>"Change your avatar", :alt => "Avatar")
             %h3 #{@employee.first_name} #{@employee.last_name}
             %ul.list-unstyled.user_data
-              - if !@employee.address.empty?
+              - if !@employee.address || !@employee.address.empty?
                 %li
                   %i.fa.fa-map-marker.user-profile-icon
                   #{@employee.address}
-              - if !@employee.job_title.empty?  
+              - if !@employee.job_title || !@employee.job_title.empty?
                 %li
                   %i.fa.fa-briefcase.user-profile-icon
                   #{@employee.job_title}
