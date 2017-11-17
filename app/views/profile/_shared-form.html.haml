@@ -1,5 +1,9 @@
 = form_with model: @employee, url: @profile_url_path, local: true, id: "demo-form2", class: "form-horizontal form-label-left" do |form|
   .form-group
+    .control-label.col-md-3.col-sm-3.col-xs-12
+    .col-md-6.col-sm-6.col-xs-12
+      %h5 User Information
+  .form-group
     = form.label(:title, "Title", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12
       = form.text_field(:title, id: "title", class: "form-control col-md-7 col-xs-12")
