@@ -1,7 +1,6 @@
 class TimesheetController < ApplicationController
   def index
-    @employee_id = Employee.find_by(user_id: current_user.id).id
-    @timesheets = Timesheet.where(employee_id: @employee_id )
+    @timesheets = Timesheet.where(employee_id: @session_employee_id )
   end
 
   def new
@@ -19,8 +18,8 @@ class TimesheetController < ApplicationController
   end
 
   def create
-    # fetch employee id
-    @employee_id = Employee.find_by(user_id: current_user.id).id
+    # fetch employee id from stored session id
+
     @timesheet = Timesheet.new(timesheet_params)
     @timesheet.save
 
@@ -50,7 +49,7 @@ class TimesheetController < ApplicationController
   # TODOS
   private
   def timesheet_params
-      params.require(:timesheet).permit(:title, :description, :entry_date, :total_hours, :status).merge(employee_id: @employee_id)
+      params.require(:timesheet).permit(:title, :description, :entry_date, :total_hours, :status).merge(employee_id: @session_employee_id)
   end
 
 

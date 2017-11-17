@@ -4,18 +4,25 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  before_action :check_user_profile
+  before_action :check_user_profile, :store_session_variables
 
   private
 
   ##TODO - global helper file
   def check_user_profile
     if(current_user)
-      if !Employee.exists?(:user_id => current_user.id)
+      @hasEmployeeRecord ||= Employee.exists?(:user_id => current_user.id)
+      if !@hasEmployeeRecord
         flash.now[:alert] = "Employee id is missing"
       else
         flash.now[:notice] = "Current Employee"
       end
+    end
+  end
+
+  def store_session_variables
+    if (current_user)
+      @session_employee_id ||= Employee.find_by(user_id: current_user.id).id   
     end
   end
 

@@ -3,8 +3,8 @@ class ReportingController < ApplicationController
   def index
     # query the timesheets data submitted by currently signed in employee
 
-    @employee_id = Employee.find_by(user_id: current_user.id).id
-    @timesheets = Timesheet.where(employee_id: @employee_id).select(:total_hours, :entry_date).order(:entry_date)
+    # using employee_id session
+    @timesheets = Timesheet.where(employee_id: @session_employee_id).select(:total_hours, :entry_date).order(:entry_date)
 
     @title = 'Timesheets submitted this week'
 
