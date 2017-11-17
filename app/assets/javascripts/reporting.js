@@ -1,15 +1,18 @@
 // TODOs - page specific javascript 
 
-$('.reporting').ready( function(){
+$('.js-reporting').ready( function(){
   console.log("init_reporting");
+
   //TODO - to use these configs when passing json from rails timesheet models
   var popCanvas = document.getElementById("popChart").getContext("2d");
+
+  var content_tag = $('#rb_reporting_data');
   
   var jsondata = {
-      labels: ["China", "India", "United States", "Indonesia", "Brazil", "Pakistan", "Nigeria", "Bangladesh", "Russia", "Japan"],
+      labels: content_tag.data('labels'),
       datasets: [{
-        label: 'Population',
-        data: [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398],
+        label: content_tag.data('legend'),
+        data: content_tag.data('data'),
         // One background color for all
         backgroundColor: '#34495E'
       }]
@@ -18,13 +21,28 @@ $('.reporting').ready( function(){
     var barChart = new Chart(popCanvas, {
       type: 'bar',
       data:  jsondata,
+      //bar chart config options
       options: {
+        title: {
+          display: true,
+          text: content_tag.data('title')
+        },
+        scales: {
+          yAxes : [{
+            display: true,
+            ticks: {
+              min: 0,
+              max: 16
+            }
+          }]
+        },
         tooltips: {
-          cornerRadius: 0,
-          caretSize: 0,
+          yAlign: 'bottom',
+          xAlign: 'center',
+          position: 'average',
           xPadding: 16,
           yPadding: 10,
-          backgroundColor: 'rgba(0, 150, 100, 0.9)',
+          backgroundColor: '#26B99A',
           titleFontStyle: 'normal',
           titleMarginBottom: 15
         },
@@ -32,10 +50,10 @@ $('.reporting').ready( function(){
           display: true,
           position: 'bottom',
           labels: {
-            boxWidth: 100,
-            fontColor: 'rgb(60, 180, 100)'
+            boxWidth: 15
           }
         }
       }
     });
+
 });

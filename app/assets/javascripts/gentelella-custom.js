@@ -5026,7 +5026,7 @@ if (typeof NProgress != 'undefined') {
 
 		}
 
-
+	//TODO - disabled/removed global jquery plugins I may not need
 	$(document).ready(function() {
 
 		init_sparklines();
@@ -5047,7 +5047,7 @@ if (typeof NProgress != 'undefined') {
 		init_daterangepicker_reservation();
 		init_SmartWizard();
 		init_EasyPieChart();
-		init_charts();
+		// init_charts();
 		init_echarts();
 		init_morris_charts();
 		init_skycons();

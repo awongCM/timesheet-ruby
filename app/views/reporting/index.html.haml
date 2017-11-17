@@ -1,6 +1,6 @@
 
 -#TODO - DRY the view pages
-%div.reporting
+%div.js-reporting
   .page-title
     .title_left
       %h3 Welcome to Timesheet Ruby
@@ -33,5 +33,9 @@
                 %i.fa.fa-close
           .clearfix
         .x_content
+          -# = debug @timesheets.as_json
           -# ChartJS implementation
           %canvas{:id => "popChart"}
+
+-# Passing ruby data to FE
+= content_tag(:div, "", id: "rb_reporting_data", data: @data_hash)
