@@ -4,6 +4,11 @@ $('.js-reporting').ready( function(){
   console.log("init_reporting");
 
   //TODO - to use these configs when passing json from rails timesheet models
+
+  if (document.getElementById("popChart") === null) {
+    return;
+  }
+
   var popCanvas = document.getElementById("popChart").getContext("2d");
 
   var content_tag = $('#rb_reporting_data');

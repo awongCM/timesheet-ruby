@@ -1,6 +1,7 @@
 class TimesheetController < ApplicationController
   def index
-    @timesheets = Timesheet.all
+    @employee_id = Employee.find_by(user_id: current_user.id).id
+    @timesheets = Timesheet.where(employee_id: @employee_id )
   end
 
   def new

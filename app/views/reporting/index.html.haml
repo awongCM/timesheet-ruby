@@ -34,8 +34,11 @@
           .clearfix
         .x_content
           -# = debug @timesheets.as_json
-          -# ChartJS implementation
-          %canvas{:id => "popChart"}
+          - if @timesheets.length == 0
+            %h4 You don't have any timesheets data to view any reports          
+          - else  
+            -# ChartJS implementation
+            %canvas{:id => "popChart"}
 
 -# Passing ruby data to FE
 = content_tag(:div, "", id: "rb_reporting_data", data: @data_hash)
