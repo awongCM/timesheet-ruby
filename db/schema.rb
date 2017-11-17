@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171112082208) do
     t.string "title"
     t.string "description"
     t.datetime "entry_date"
-    t.time "total_hours"
+    t.integer "total_hours"
     t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

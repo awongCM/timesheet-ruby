@@ -4,7 +4,7 @@ class CreateTimesheets < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :description
       t.datetime :entry_date
-      t.time :total_hours
+      t.integer :total_hours
       t.references :employee
 
       t.timestamps
