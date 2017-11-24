@@ -70,29 +70,29 @@
                         Delete      
               / end project list
               /TODO - pagination
-              .dataTables_wrapper
-                .row
-                  .col-sm-5
-                    #datatable_info.dataTables_info{"aria-live" => "polite", :role => "status"} Showing 1 to 10 of 57 entries
-                  .col-sm-7
-                    #datatable_paginate.dataTables_paginate.paging_simple_numbers
-                      %ul.pagination
-                        %li#datatable_previous.paginate_button.previous.disabled
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "0", :href => "#", :tabindex => "0"} Previous
-                        %li.paginate_button.active
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "1", :href => "#", :tabindex => "0"} 1
-                        %li.paginate_button
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "2", :href => "#", :tabindex => "0"} 2
-                        %li.paginate_button
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "3", :href => "#", :tabindex => "0"} 3
-                        %li.paginate_button
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "4", :href => "#", :tabindex => "0"} 4
-                        %li.paginate_button
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "5", :href => "#", :tabindex => "0"} 5
-                        %li.paginate_button
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "6", :href => "#", :tabindex => "0"} 6
-                        %li#datatable_next.paginate_button.next
-                          %a{"aria-controls" => "datatable", "data-dt-idx" => "7", :href => "#", :tabindex => "0"} Next
+              -# .dataTables_wrapper
+              -#   .row
+              -#     .col-sm-5
+              -#       #datatable_info.dataTables_info{"aria-live" => "polite", :role => "status"} Showing 1 to 10 of 57 entries
+              -#     .col-sm-7
+              -#       #datatable_paginate.dataTables_paginate.paging_simple_numbers
+              -#         %ul.pagination
+              -#           %li#datatable_previous.paginate_button.previous.disabled
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "0", :href => "#", :tabindex => "0"} Previous
+              -#           %li.paginate_button.active
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "1", :href => "#", :tabindex => "0"} 1
+              -#           %li.paginate_button
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "2", :href => "#", :tabindex => "0"} 2
+              -#           %li.paginate_button
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "3", :href => "#", :tabindex => "0"} 3
+              -#           %li.paginate_button
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "4", :href => "#", :tabindex => "0"} 4
+              -#           %li.paginate_button
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "5", :href => "#", :tabindex => "0"} 5
+              -#           %li.paginate_button
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "6", :href => "#", :tabindex => "0"} 6
+              -#           %li#datatable_next.paginate_button.next
+              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "7", :href => "#", :tabindex => "0"} Next
               /end - pagination
             / button
             = link_to(new_timesheet_path, :class => "btn btn-success") do
