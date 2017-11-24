@@ -1,10 +1,61 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+-# %h2 Forgot your password?
+-# = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+-#   = devise_error_messages!
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true
+-#   .actions
+-#     = f.submit "Send me reset password instructions"
+-# = render "devise/shared/links"
+
+.login_wrapper
+  .animate.form.login_form
+    %section.login_content
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f|
+        %h1 Reset Password
+        - flash.each do |name, msg|
+          = content_tag :div, msg, id: "flash_#{name}"
+        %div
+          = f.email_field :email, class: "form-control", placeholder: "Email", autofocus: true
+        %div
+          = f.submit "Send me reset password instructions", class: "btn btn-default submit", style: "width: 100%;margin:0;"
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to "Forgot your password?", new_password_path(resource_name), class: "reset_pass"
+        .clearfix
+        .separator
+          %div
+            %p.change_link
+              - if controller_name != 'sessions'
+                = link_to "Log in", new_session_path(resource_name), class: "btn btn-default submit"
+            %p.change_link
+              New to site?
+              - if devise_mapping.registerable? && controller_name != 'registrations'
+                = link_to "Sign up", new_registration_path(resource_name), class: "to_register"
+          .clearfix
+          %br/
+          %div
+            %p ©2017 All Rights Reserved. Privacy and Terms
+  #register.animate.form.registration_form
+    %section.login_content
+      %form
+        %h1 Create Account
+        %div
+          %input.form-control{:placeholder => "Username", :required => "", :type => "text"}/
+        %div
+          %input.form-control{:placeholder => "Email", :required => "", :type => "email"}/
+        %div
+          %input.form-control{:placeholder => "Password", :required => "", :type => "password"}/
+        %div
+          %a.btn.btn-default.submit{:href => "index.html"} Submit
+        .clearfix
+        .separator
+          %p.change_link
+            Already a member ?
+            %a.to_register{:href => "#signin"} Log in
+          .clearfix
+          %br/
+          %div
+            %p ©2017 All Rights Reserved. Privacy and Terms
+
+
