@@ -33,69 +33,73 @@
                   %i.fa.fa-close
             .clearfix
           .x_content
-            - if @timesheets.length == 0
-              -# check if no timesheets available
-              %h4 You don't have any submitted timesheets
-              %br/  
+            -# TODO
+            - if !userHasEmployeeProfile
+              %h4 You have not completed your employee profile yet to log any timesheets. Please navigate to your profile tab.
             - else
-              / start project list
-              %table.table.table-striped.projects
-                %thead
-                  %tr
-                    %th #
-                    %th Title
-                    %th Description
-                    %th Entry Date
-                    %th Total Hours
-                    %th Status
-                    %th #Edit
-                %tbody
-                - @timesheets.each do |timesheet|
-                  %tr
-                    %td #
-                    %td= timesheet.title
-                    %td= timesheet.description
-                    %td= timesheet.entry_date
-                    %td= timesheet.total_hours
-                    %td= timesheet.status
-                    %td
-                      = link_to(timesheet_path(timesheet), :class => "btn btn-primary btn-xs") do 
-                        %i.fa.fa-folder
-                        View
-                      = link_to(edit_timesheet_path(timesheet), :class=> "btn btn-info btn-xs") do 
-                        %i.fa.fa-pencil
-                        Edit
-                      = link_to(timesheet_path(timesheet), :class=> "btn btn-danger btn-xs", method: :delete, data: {confirm: 'Are you sure you want to delete this timesheet?'}) do 
-                        %i.fa.fa-trash-o
-                        Delete      
-              / end project list
-              /TODO - pagination
-              -# .dataTables_wrapper
-              -#   .row
-              -#     .col-sm-5
-              -#       #datatable_info.dataTables_info{"aria-live" => "polite", :role => "status"} Showing 1 to 10 of 57 entries
-              -#     .col-sm-7
-              -#       #datatable_paginate.dataTables_paginate.paging_simple_numbers
-              -#         %ul.pagination
-              -#           %li#datatable_previous.paginate_button.previous.disabled
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "0", :href => "#", :tabindex => "0"} Previous
-              -#           %li.paginate_button.active
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "1", :href => "#", :tabindex => "0"} 1
-              -#           %li.paginate_button
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "2", :href => "#", :tabindex => "0"} 2
-              -#           %li.paginate_button
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "3", :href => "#", :tabindex => "0"} 3
-              -#           %li.paginate_button
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "4", :href => "#", :tabindex => "0"} 4
-              -#           %li.paginate_button
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "5", :href => "#", :tabindex => "0"} 5
-              -#           %li.paginate_button
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "6", :href => "#", :tabindex => "0"} 6
-              -#           %li#datatable_next.paginate_button.next
-              -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "7", :href => "#", :tabindex => "0"} Next
-              /end - pagination
-            / button
-            = link_to(new_timesheet_path, :class => "btn btn-success") do
-              Log new timesheet
-            / end button
-  
+              - if @timesheets.length == 0
+                -# check if no timesheets available
+                %h4 You don't have any submitted timesheets
+                %br/  
+              - else
+                / start project list
+                %table.table.table-striped.projects
+                  %thead
+                    %tr
+                      %th #
+                      %th Title
+                      %th Description
+                      %th Entry Date
+                      %th Total Hours
+                      %th Status
+                      %th #Edit
+                  %tbody
+                  - @timesheets.each do |timesheet|
+                    %tr
+                      %td #
+                      %td= timesheet.title
+                      %td= timesheet.description
+                      %td= timesheet.entry_date
+                      %td= timesheet.total_hours
+                      %td= timesheet.status
+                      %td
+                        = link_to(timesheet_path(timesheet), :class => "btn btn-primary btn-xs") do 
+                          %i.fa.fa-folder
+                          View
+                        = link_to(edit_timesheet_path(timesheet), :class=> "btn btn-info btn-xs") do 
+                          %i.fa.fa-pencil
+                          Edit
+                        = link_to(timesheet_path(timesheet), :class=> "btn btn-danger btn-xs", method: :delete, data: {confirm: 'Are you sure you want to delete this timesheet?'}) do 
+                          %i.fa.fa-trash-o
+                          Delete      
+                / end project list
+                /TODO - pagination
+                -# .dataTables_wrapper
+                -#   .row
+                -#     .col-sm-5
+                -#       #datatable_info.dataTables_info{"aria-live" => "polite", :role => "status"} Showing 1 to 10 of 57 entries
+                -#     .col-sm-7
+                -#       #datatable_paginate.dataTables_paginate.paging_simple_numbers
+                -#         %ul.pagination
+                -#           %li#datatable_previous.paginate_button.previous.disabled
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "0", :href => "#", :tabindex => "0"} Previous
+                -#           %li.paginate_button.active
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "1", :href => "#", :tabindex => "0"} 1
+                -#           %li.paginate_button
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "2", :href => "#", :tabindex => "0"} 2
+                -#           %li.paginate_button
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "3", :href => "#", :tabindex => "0"} 3
+                -#           %li.paginate_button
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "4", :href => "#", :tabindex => "0"} 4
+                -#           %li.paginate_button
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "5", :href => "#", :tabindex => "0"} 5
+                -#           %li.paginate_button
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "6", :href => "#", :tabindex => "0"} 6
+                -#           %li#datatable_next.paginate_button.next
+                -#             %a{"aria-controls" => "datatable", "data-dt-idx" => "7", :href => "#", :tabindex => "0"} Next
+                /end - pagination
+              / button
+              = link_to(new_timesheet_path, :class => "btn btn-success") do
+                Log new timesheet
+              / end button
+    

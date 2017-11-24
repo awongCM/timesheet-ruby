@@ -6,12 +6,15 @@ class ApplicationController < ActionController::Base
 
   before_action :check_user_profile, :store_session_variables
 
+  # TODO - import helpers
+  include ApplicationHelper
+
   private
 
   ##TODO - global helper file
   def check_user_profile
     if(current_user)
-      @hasEmployeeRecord ||= Employee.exists?(:user_id => current_user.id)
+      @hasEmployeeRecord ||= userHasEmployeeProfile
       if !@hasEmployeeRecord
         flash.now[:alert] = "Employee id is missing"
       else
@@ -22,7 +25,12 @@ class ApplicationController < ActionController::Base
 
   def store_session_variables
     if (current_user)
-      @session_employee_id ||= Employee.find_by(user_id: current_user.id).id   
+      @employeeFound = userHasEmployeeProfile
+
+      unless !@employeeFound
+        @session_employee_id = Employee.find_by(user_id: current_user.id)
+      end
+   
     end
   end
 
