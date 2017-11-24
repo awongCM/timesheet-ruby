@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
       @employeeFound = userHasEmployeeProfile
 
       unless !@employeeFound
-        @session_employee_id = Employee.find_by(user_id: current_user.id)
+        @session_employee_id = Employee.find_by(user_id: current_user.id).id
       end
    
     end

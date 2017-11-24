@@ -10,8 +10,8 @@
       = form.text_field(:description, id: "description", class: "form-control col-md-7 col-xs-12")
   .form-group
     = form.label(:entry_date, "Entry Date", class: "control-label col-md-3 col-sm-3 col-xs-12")
-    .col-md-6.col-sm-6.col-xs-12
-      = form.text_field(:entry_date, id: "entry_date", class: "form-control col-md-7 col-xs-12")
+    .col-md-6.col-sm-6.col-xs-12{style: "display: flex; justify-content: space-between;"}
+      = form.date_select :entry_date, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {id: "date_of_birth", required: true, class: "form-control", style: "width: 30%;"}
   .form-group
     = form.label(:total_hours, "Total Hours", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12
