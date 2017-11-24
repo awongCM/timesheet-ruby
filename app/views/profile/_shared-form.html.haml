@@ -36,7 +36,7 @@
   .form-group
     = form.label(:date_of_birth, "DOB", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12{style: "display: flex; justify-content: space-between;"}
-      = form.date_select :date_of_birth, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {id: "date_of_birth", required: true, class: "form-control", style: "width: 30%;"}
+      = form.date_select :date_of_birth, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {id: "date_of_birth", required: true, class: "form-control", style: "width: 30%;"}
   .form-group
     = form.label(:job_title, "Job Title", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12
