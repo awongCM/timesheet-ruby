@@ -1,6 +1,6 @@
 class TimesheetController < ApplicationController
   def index
-    @timesheets = Timesheet.where(employee_id: @session_employee_id )
+    @timesheets = Timesheet.currently_logged_employee(@session_employee_id)
   end
 
   def new

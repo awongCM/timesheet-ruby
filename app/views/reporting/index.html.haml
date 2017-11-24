@@ -35,7 +35,7 @@
         .x_content
           -# = debug @timesheets.as_json
           - if @timesheets.length == 0
-            %h4 You don't have any timesheets data to view any reports          
+            %h4 You don't have any submitted timesheets this week to view any reports          
           - else  
             -# ChartJS implementation
             %canvas{:id => "popChart"}
