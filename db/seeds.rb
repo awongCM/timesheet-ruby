@@ -37,6 +37,7 @@ employees_data.each do |row|
     employee.last_name = row['last_name']
     employee.address = row['address']
     employee.job_title = row['job_title']
+    employee.gender = row['gender']
     employee.date_of_birth = Date.parse(row['date_of_birth']).to_s
     user = User.find_by(username: row['username'])
     employee.user_id = user.id
