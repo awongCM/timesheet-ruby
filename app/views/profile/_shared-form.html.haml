@@ -43,10 +43,10 @@
     = form.label(:gender, "Gender", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12{style: "display: flex; justify-content: flex-start;"}
       .radio(style ="width: 30%;")
-        = form.radio_button(:gender, "Male", style: "margin:0;")
+        = form.radio_button(:gender, "Male", class: "flat", style: "margin:0;")
         = form.label(:gender, "Male")
       .radio(style ="width: 30%;")
-        = form.radio_button(:gender, "Female", style: "margin:0;")
+        = form.radio_button(:gender, "Female", class: "flat", style: "margin:0;")
         = form.label(:gender, "Female")
   .form-group
     = form.label(:job_title, "Job Title", class: "control-label col-md-3 col-sm-3 col-xs-12")
