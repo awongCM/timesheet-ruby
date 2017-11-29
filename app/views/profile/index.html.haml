@@ -125,9 +125,7 @@
                       %label.control-label.col-md-3.col-sm-3.col-xs-12 DOB
                       -# TODO - place inline styles for now
                       .col-md-9.col-sm-9.col-xs-12{style: "display: flex; justify-content: space-between;"}
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.date_of_birth && @employee.date_of_birth.strftime("%d")}" style = "width: 30%;")
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.date_of_birth && @employee.date_of_birth.strftime("%B")}" style = "width: 30%;") 
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.date_of_birth && @employee.date_of_birth.strftime("%Y")}" style = "width: 30%;")
+                        = select_date(@employee.date_of_birth, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {id: "date_of_birth", disabled: true, class: "form-control", style: "width: 30%;"})
                     .form-group
                       %label.control-label.col-md-3.col-sm-3.col-xs-12 Gender
                       .col-md-9.col-sm-9.col-xs-12  
