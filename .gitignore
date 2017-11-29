@@ -87,3 +87,6 @@ pickle-email-*.html
 /*.haml
 /*.html
 .byebug_history
+
+#filter out user-defined seeds artifacts
+db/seeds

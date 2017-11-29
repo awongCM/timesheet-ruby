@@ -4,8 +4,9 @@ class ReportingController < ApplicationController
     # query the weekly timesheets data submitted by currently signed in employee
 
     # using employee_id session
-    # @timesheets = Timesheet.where(employee_id: @session_employee_id).select(:total_hours, :entry_date).order(:entry_date)
-    @timesheets = Timesheet.currently_logged_employee(@session_employee_id).weekly_timesheets.order(:entry_date)
+    # TODO - to restore weekly_timesheets scope
+    # @timesheets = Timesheet.currently_logged_employee(@session_employee_id).weekly_timesheets.order(:entry_date)
+    @timesheets = Timesheet.currently_logged_employee(@session_employee_id).order(:entry_date)
     
     @title = 'Your timesheets submitted this week'
 
