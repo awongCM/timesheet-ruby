@@ -23,7 +23,8 @@
   .form-group
     = form.label(:title, "Title", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12
-      = form.text_field(:title, id: "title", class: "form-control col-md-7 col-xs-12")
+      -# TODOs - Need to place these honorific titles in yaml config file
+      = form.select(:title, ["Mr", "Master", "Sir", "Madam", "Lady", "Mrs", "Ms", "Miss", "Dr", "Professor"], {}, {class: "form-control col-md-7 col-xs-12"})
   .form-group
     = form.label(:first_name, "First Name", class: "control-label col-md-3 col-sm-3 col-xs-12")
     .col-md-6.col-sm-6.col-xs-12
