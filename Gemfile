@@ -58,6 +58,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'mysql2', '~> 0.3.18'
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 
 #added Bootstrap theme
 gem 'gentelella-rails'
