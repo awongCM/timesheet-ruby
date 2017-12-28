@@ -7,9 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   %body.nav-md{:class=>("login" unless user_signed_in?)}
     -# TODO - to be removed
-    = render "shared/menu"
+    -# = render "shared/menu"
+    = render "shared/time-display"
     - if user_signed_in?
-      .container.body
+      .container.body.clearfix
         .main_container
           .col-md-3.left_col
             .left_col.scroll-view
