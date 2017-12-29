@@ -1,5 +1,7 @@
 class ReportingController < ApplicationController
   #TODO
+  load_and_authorize_resource :timesheet, :parent => false 
+
   def index
     # query the weekly timesheets data submitted by currently signed in employee
 

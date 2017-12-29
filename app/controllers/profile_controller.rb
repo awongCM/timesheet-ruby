@@ -1,4 +1,6 @@
 class ProfileController < ApplicationController
+  load_and_authorize_resource :employee, :parent => false 
+
   def index
     #fetch current employee based on logged in user
     @employee = Employee.find_by(user_id: current_user.id)

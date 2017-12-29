@@ -10,4 +10,11 @@ class User < ApplicationRecord
 
   belongs_to :employee, optional: true
 
+  # Define roles for User model
+  ROLES = %w[admin supervisor user]
+
+  def has_role?(role_name)
+    ROLES.include?(role_name) && (self.role.eql? role_name)
+  end
+
 end

@@ -1,4 +1,6 @@
 class TimesheetController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @timesheets = Timesheet.currently_logged_employee(@session_employee_id)
   end

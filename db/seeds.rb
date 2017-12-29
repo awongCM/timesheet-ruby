@@ -23,6 +23,7 @@ users_data.each do |row|
     user.email = row['email']
     user.password = row['password']
     user.password_confirmation = row['password_confirmation']
+    user.role = row['role']
   end  
 end
 

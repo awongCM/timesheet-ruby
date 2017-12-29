@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # TODO - to properly store sesson variable for this
   def store_session_variables
     if (current_user)
       @employeeFound = userHasEmployeeProfile
@@ -38,7 +39,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-      attributes = [:username, :email, :password, :password_confirmation, :remember_me]
+      attributes = [:username, :email, :password, :password_confirmation, :remember_me, :role]
       devise_parameter_sanitizer.permit :sign_up, keys: attributes
       devise_parameter_sanitizer.permit :account_update, keys: attributes
   end

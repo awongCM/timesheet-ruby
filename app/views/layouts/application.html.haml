@@ -8,8 +8,8 @@
   %body.nav-md{:class=>("login" unless user_signed_in?)}
     -# TODO - to be removed
     -# = render "shared/menu"
-    = render "shared/time-display"
     - if user_signed_in?
+      = render "shared/time-display"
       .container.body.clearfix
         .main_container
           .col-md-3.left_col
