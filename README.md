@@ -1,20 +1,23 @@
 # Timesheet App in ROR
 
-Busines Timesheet application built in ROR
+Business Timesheet application built in ROR
 
 #Ingredients Used
-* Rails 4
+* Rails 4/5
 * JQuery Plugins
 * HAML
 * SASS/SCSS
+* Custom Bootstrap - Gentelella
+* Devise
+* CanCanCan
+* High Voltage
 
 ## Installation
-
-TODO: Describe the installation process
-
-## Ingredients used for this app
-
-TODO:
+1. Download the zipped folder
+2. Navigate to the project folder
+3. `bundle install`
+4. `rails s`
+5. Open `http://localhost:3000`
 
 ## History
 
@@ -34,4 +37,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 #TODOS
 
-TBD
+ElasticSearch indexing, Admin/Moderator screens/models access, rake tasks, static pages content, internal articles/blog content,etc
