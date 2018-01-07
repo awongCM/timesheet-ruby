@@ -35,6 +35,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 4. ~~Report of submitted timesheets~~
 5. ~~Graph display of submitted timesheets~~
 
-#TODOS
+## TODOS
 
 ElasticSearch indexing, Admin/Moderator screens/models access, rake tasks, static pages content, internal articles/blog content,etc
