@@ -2,17 +2,65 @@
   .menu_section
     %h3 General
     %ul.nav.side-menu
+      - if can? :manage, :all
+        -# TODOS - For admins only
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-comment
+            Company Profile
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-users
+            All Employees
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-calendar-o
+            Staff Leave Days and Rollover
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-calendar-check-o
+            Staff Leave Approval
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-cog
+            Public Holidays Settings
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-cog
+            Staff Rate Settings
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-cog
+            Financial Year Settings
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-question-circle-o
+            Accounting Codes
+        %li
+          = link_to(profile_index_path) do
+            %i.fa.fa-lock
+            Master Profile
       %li
         = link_to(profile_index_path) do
           %i.fa.fa-address-card
           Profile
+      - if can? :manage, Timesheet  
+        %li
+          -# TODO for supervisors only
+          = link_to(timesheet_index_path) do
+            %i.fa.fa-calendar-o
+            All Staff Timesheet    
       %li
-        -# TODO
         = link_to(timesheet_index_path) do
           %i.fa.fa-calendar
-          Timesheet
+          My Timesheet
+      - if can? :manage, Timesheet  
+        %li
+          -# TODO for supervisors only
+          = link_to(reporting_index_path) do
+            %i.fa.fa-bar-chart            
+            Staff Productivity Chart
       %li
-        -# TODO
         = link_to(reporting_index_path) do
           %i.fa.fa-line-chart            
-          Reporting
+          My Reporting Chart
