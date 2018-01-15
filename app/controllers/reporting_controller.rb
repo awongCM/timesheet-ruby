@@ -7,8 +7,8 @@ class ReportingController < ApplicationController
 
     # using employee_id session
     # TODO - to restore weekly_timesheets scope
-    # @timesheets = Timesheet.currently_logged_employee(@session_employee_id).weekly_timesheets.order(:entry_date)
-    @timesheets = Timesheet.currently_logged_employee(@session_employee_id).order(:entry_date)
+    # @timesheets = Timesheet.currently_logged_employee(session[:employee_id]).weekly_timesheets.order(:entry_date)
+    @timesheets = Timesheet.currently_logged_employee(session[:employee_id]).order(:entry_date)
     
     @title = 'Your timesheets submitted this week'
 

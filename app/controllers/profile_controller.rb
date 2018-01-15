@@ -21,10 +21,12 @@ class ProfileController < ApplicationController
   end
   
   def create
-
+    # Assumed a logged in user can only create one employee profile for himself/herself.
     @employee = Employee.new(employee_params)
     @employee.save
 
+    session[:employee_id] = @employee.id
+    
     redirect_to profile_index_path
   end
 

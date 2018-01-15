@@ -2,7 +2,7 @@ class TimesheetController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @timesheets = Timesheet.currently_logged_employee(@session_employee_id)
+    @timesheets = Timesheet.currently_logged_employee(session[:employee_id])
   end
 
   def new
@@ -51,7 +51,7 @@ class TimesheetController < ApplicationController
   # TODOS
   private
   def timesheet_params
-      params.require(:timesheet).permit(:title, :description, :entry_date, :total_hours, :status).merge(employee_id: @session_employee_id)
+      params.require(:timesheet).permit(:title, :description, :entry_date, :total_hours, :status).merge(employee_id: session[:employee_id])
   end
 
 

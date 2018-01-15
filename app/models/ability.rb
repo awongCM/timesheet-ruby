@@ -11,7 +11,7 @@ class Ability
       can :create, User
       can [:create, :read, :update], [Employee, Timesheet]
     elsif user.has_role? "user"
-      can [:read, :update], Employee, :user_id => user.id
+      can [:create, :read, :update], Employee, :user_id => user.id
       can [:create, :read], Timesheet
       can :update, Timesheet, :employee_id => session_employee_id
       # TODO
