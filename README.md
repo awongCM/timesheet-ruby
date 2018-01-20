@@ -37,4 +37,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## TODOS
 
-ElasticSearch indexing, Admin/Moderator screens/models access, rake tasks, static pages content, internal articles/blog content,etc
+ElasticSearch indexing, Admin/Moderator screens/models access, rake tasks, static pages content, internal articles/blog content, plus other Ruby gems to use, etc
