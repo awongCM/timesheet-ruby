@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :profile
   resources :timesheet
   resources :reporting
+  resources :help, only: [:index]
   
   root to: 'main#index'
 end

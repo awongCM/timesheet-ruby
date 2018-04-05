@@ -19,7 +19,8 @@
                 %span.badge.bg-red.pull-right 50%
                 %span Settings
             %li
-              %a{:href => "javascript:;"} Help
+              = link_to(help_index_path) do
+                Help
             %li
               = link_to(destroy_user_session_path, method: :delete) do
                 %i.fa.fa-sign-out.pull-right
