@@ -1,5 +1,4 @@
 class ReportingController < ApplicationController
-  #TODO
   load_and_authorize_resource :timesheet, :parent => false 
 
   def index

@@ -48,7 +48,6 @@ class TimesheetController < ApplicationController
     redirect_to timesheet_index_path
   end
 
-  # TODOS
   private
   def timesheet_params
       params.require(:timesheet).permit(:title, :description, :entry_date, :total_hours, :status).merge(employee_id: session[:employee_id])
