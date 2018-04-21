@@ -1,146 +1,147 @@
 -# TODO - DRY THE VIEWS
-%div
-  .page-title
-    .title_left
-      %h3 Profile
-    .title_right
-      .col-md-5.col-sm-5.col-xs-12.form-group.pull-right.top_search
-        .input-group
-          %input.form-control{:placeholder => "Search for...", :type => "text"}/
-          %span.input-group-btn
-            %button.btn.btn-default{:type => "button"} Go!
-  .clearfix
-  .row
-    .col-md-12.col-sm-12.col-xs-12
-      .x_panel
-        .x_title
-          %h2
-            Profile Details
-          .clearfix
-        .x_content
-          .col-md-3.col-sm-3.col-xs-12.profile_left
-            .profile_img
-              #crop-avatar
-                / Current avatar
-                = image_tag("profile-default.png", :class => "img-responsive avatar-view", :title =>"Change your avatar", :alt => "Avatar")
-            - if userHasEmployeeProfile  
-              %h3 #{@employee.first_name} #{@employee.last_name}
-            %ul.list-unstyled.user_data
-              - if userHasEmployeeProfile
-                - if !@employee.address || !@employee.address.empty?
-                  %li
-                    %i.fa.fa-map-marker.user-profile-icon
-                    #{@employee.address}
-                - if !@employee.job_title || !@employee.job_title.empty?
-                  %li
-                    %i.fa.fa-briefcase.user-profile-icon
-                    #{@employee.job_title}
+- cache do
+  %div
+    .page-title
+      .title_left
+        %h3 Profile
+      .title_right
+        .col-md-5.col-sm-5.col-xs-12.form-group.pull-right.top_search
+          .input-group
+            %input.form-control{:placeholder => "Search for...", :type => "text"}/
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button"} Go!
+    .clearfix
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        .x_panel
+          .x_title
+            %h2
+              Profile Details
+            .clearfix
+          .x_content
+            .col-md-3.col-sm-3.col-xs-12.profile_left
+              .profile_img
+                #crop-avatar
+                  / Current avatar
+                  = image_tag("profile-default.png", :class => "img-responsive avatar-view", :title =>"Change your avatar", :alt => "Avatar")
+              - if userHasEmployeeProfile  
+                %h3 #{@employee.first_name} #{@employee.last_name}
+              %ul.list-unstyled.user_data
+                - if userHasEmployeeProfile
+                  - if !@employee.address || !@employee.address.empty?
+                    %li
+                      %i.fa.fa-map-marker.user-profile-icon
+                      #{@employee.address}
+                  - if !@employee.job_title || !@employee.job_title.empty?
+                    %li
+                      %i.fa.fa-briefcase.user-profile-icon
+                      #{@employee.job_title}
 
-            - if !userHasEmployeeProfile
-              = link_to(new_profile_path, :class => "btn btn-success") do
-                %i.fa.fa-edit.m-right-xs>
-                New Profile
-            - else
-              = link_to(edit_profile_path(@employee), :class => "btn btn-success") do
-                %i.fa.fa-edit.m-right-xs>
-                Edit Profile
-            %br/
-          .col-md-9.col-sm-9.col-xs-12
-            -# Profile section
-            .x_panel
-              .x_title
-                %h2
-                  Profile Information
-                %ul.nav.navbar-right.panel_toolbox
-                  %li
-                    %a.collapse-link
-                      %i.fa.fa-chevron-up
-                  %li.dropdown
-                    %a.dropdown-toggle(aria-expanded="false" data-toggle="dropdown" href="#" role="button")
-                      %i.fa.fa-wrench
-                    %ul.dropdown-menu(role="menu")
-                      %li
-                        %a(href="#") Settings 1
-                      %li
-                        %a(href="#") Settings 2
-                  %li
-                    %a.close-link
-                      %i.fa.fa-close
-                .clearfix
-              .x_content
-                %br/
-                %form.form-horizontal.form-label-left
-                  .form-group
-                    %label.control-label.col-md-3.col-sm-3.col-xs-12 Username
-                    .col-md-9.col-sm-9.col-xs-12
-                      %input.form-control(readonly="readonly" type="text" value="#{current_user.username}")
-                  .form-group
-                    %label.control-label.col-md-3.col-sm-3.col-xs-12 Email Address
-                    .col-md-9.col-sm-9.col-xs-12
-                      %input.form-control(readonly="readonly" type="text" value="#{current_user.email}")
-            -# User info section
-            .x_panel
-              .x_title
-                %h2
-                  User Information
-                %ul.nav.navbar-right.panel_toolbox
-                  %li
-                    %a.collapse-link
-                      %i.fa.fa-chevron-up
-                  %li.dropdown
-                    %a.dropdown-toggle(aria-expanded="false" data-toggle="dropdown" href="#" role="button")
-                      %i.fa.fa-wrench
-                    %ul.dropdown-menu(role="menu")
-                      %li
-                        %a(href="#") Settings 1
-                      %li
-                        %a(href="#") Settings 2
-                  %li
-                    %a.close-link
-                      %i.fa.fa-close
-                .clearfix
-              
               - if !userHasEmployeeProfile
-                .x_content
-                  %br/
-                  %p Your profile is not setup yet. 
-                  %p Please complete your profile setup.
+                = link_to(new_profile_path, :class => "btn btn-success") do
+                  %i.fa.fa-edit.m-right-xs>
+                  New Profile
               - else
+                = link_to(edit_profile_path(@employee), :class => "btn btn-success") do
+                  %i.fa.fa-edit.m-right-xs>
+                  Edit Profile
+              %br/
+            .col-md-9.col-sm-9.col-xs-12
+              -# Profile section
+              .x_panel
+                .x_title
+                  %h2
+                    Profile Information
+                  %ul.nav.navbar-right.panel_toolbox
+                    %li
+                      %a.collapse-link
+                        %i.fa.fa-chevron-up
+                    %li.dropdown
+                      %a.dropdown-toggle(aria-expanded="false" data-toggle="dropdown" href="#" role="button")
+                        %i.fa.fa-wrench
+                      %ul.dropdown-menu(role="menu")
+                        %li
+                          %a(href="#") Settings 1
+                        %li
+                          %a(href="#") Settings 2
+                    %li
+                      %a.close-link
+                        %i.fa.fa-close
+                  .clearfix
                 .x_content
                   %br/
                   %form.form-horizontal.form-label-left
                     .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Title
+                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Username
                       .col-md-9.col-sm-9.col-xs-12
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.title}")
+                        %input.form-control(readonly="readonly" type="text" value="#{current_user.username}")
                     .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 First Name
+                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Email Address
                       .col-md-9.col-sm-9.col-xs-12
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.first_name}")
-                    .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Last Name
-                      .col-md-9.col-sm-9.col-xs-12
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.last_name}")
-                    .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 DOB
-                      -# TODO - place inline styles for now
-                      .col-md-9.col-sm-9.col-xs-12{style: "display: flex; justify-content: space-between;"}
-                        = select_date(@employee.date_of_birth, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {id: "date_of_birth", disabled: true, class: "form-control", style: "width: 30%;"})
-                    .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Gender
-                      -# TODO - place inline styles for now
-                      .col-md-9.col-sm-9.col-xs-12(style="display: flex; justify-content: flex-start;")
-                        .radio(style ="width: 30%;")
-                          = radio_button_tag(@employee.gender, "Male", @employee.gender == "Male" , class: "flat", disabled: true)
-                          = label(@employee.gender, "Male")
-                        .radio(style ="width: 30%;")
-                          = radio_button_tag(@employee.gender, "Female", @employee.gender == "Female", class: "flat",  disabled: true)
-                          = label(@employee.gender, "Female")  
-                    .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Job Title
-                      .col-md-9.col-sm-9.col-xs-12
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.job_title}")
-                    .form-group
-                      %label.control-label.col-md-3.col-sm-3.col-xs-12 Address
-                      .col-md-9.col-sm-9.col-xs-12
-                        %input.form-control(readonly="readonly" type="text" value="#{@employee.address}")
+                        %input.form-control(readonly="readonly" type="text" value="#{current_user.email}")
+              -# User info section
+              .x_panel
+                .x_title
+                  %h2
+                    User Information
+                  %ul.nav.navbar-right.panel_toolbox
+                    %li
+                      %a.collapse-link
+                        %i.fa.fa-chevron-up
+                    %li.dropdown
+                      %a.dropdown-toggle(aria-expanded="false" data-toggle="dropdown" href="#" role="button")
+                        %i.fa.fa-wrench
+                      %ul.dropdown-menu(role="menu")
+                        %li
+                          %a(href="#") Settings 1
+                        %li
+                          %a(href="#") Settings 2
+                    %li
+                      %a.close-link
+                        %i.fa.fa-close
+                  .clearfix
+                
+                - if !userHasEmployeeProfile
+                  .x_content
+                    %br/
+                    %p Your profile is not setup yet. 
+                    %p Please complete your profile setup.
+                - else
+                  .x_content
+                    %br/
+                    %form.form-horizontal.form-label-left
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 Title
+                        .col-md-9.col-sm-9.col-xs-12
+                          %input.form-control(readonly="readonly" type="text" value="#{@employee.title}")
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 First Name
+                        .col-md-9.col-sm-9.col-xs-12
+                          %input.form-control(readonly="readonly" type="text" value="#{@employee.first_name}")
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 Last Name
+                        .col-md-9.col-sm-9.col-xs-12
+                          %input.form-control(readonly="readonly" type="text" value="#{@employee.last_name}")
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 DOB
+                        -# TODO - place inline styles for now
+                        .col-md-9.col-sm-9.col-xs-12{style: "display: flex; justify-content: space-between;"}
+                          = select_date(@employee.date_of_birth, {order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 100}, {id: "date_of_birth", disabled: true, class: "form-control", style: "width: 30%;"})
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 Gender
+                        -# TODO - place inline styles for now
+                        .col-md-9.col-sm-9.col-xs-12(style="display: flex; justify-content: flex-start;")
+                          .radio(style ="width: 30%;")
+                            = radio_button_tag(@employee.gender, "Male", @employee.gender == "Male" , class: "flat", disabled: true)
+                            = label(@employee.gender, "Male")
+                          .radio(style ="width: 30%;")
+                            = radio_button_tag(@employee.gender, "Female", @employee.gender == "Female", class: "flat",  disabled: true)
+                            = label(@employee.gender, "Female")  
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 Job Title
+                        .col-md-9.col-sm-9.col-xs-12
+                          %input.form-control(readonly="readonly" type="text" value="#{@employee.job_title}")
+                      .form-group
+                        %label.control-label.col-md-3.col-sm-3.col-xs-12 Address
+                        .col-md-9.col-sm-9.col-xs-12
+                          %input.form-control(readonly="readonly" type="text" value="#{@employee.address}")
