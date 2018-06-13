@@ -4,6 +4,7 @@ class ProfileController < ApplicationController
   def index
     #fetch current employee based on logged in user
     @employee = Employee.find_by(user_id: current_user.id)
+    @title = 'Profile'
 
     # For testing/debugging emails
     # mailer = UserMailer.welcome_email(current_user)

@@ -3,20 +3,27 @@ class TimesheetController < ApplicationController
 
   def index
     @timesheets = Timesheet.currently_logged_employee(session[:employee_id])
+    @title = 'Timesheets'
   end
 
   def new
     @timesheet = Timesheet.new
     @timesheet_url_path = timesheet_index_path
+
+    @title = 'Timesheets'
   end
 
   def edit
     @timesheet = Timesheet.find(params[:id])
     @timesheet_url_path = timesheet_path
+
+    @title = 'Timesheets'
   end
 
   def show
     @timesheet = Timesheet.find(params[:id])
+
+    @title = 'Timesheets'
   end
 
   def create
