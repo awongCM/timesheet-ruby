@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # unlocks: 'users/unlocks',
   }, path_names: {sign_in: "login", sign_out: "logout"}
 
-  # TODOS
+  # TODOS - to scale and refine
   resources :profile
   resources :timesheet
   resources :reporting
