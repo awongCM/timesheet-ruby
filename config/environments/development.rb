@@ -23,6 +23,14 @@ Rails.application.configure do
     expires_in: 1.hour
   }
 
+  # TODO - need proper secure storage
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: 'key-30b2e4668a7145041e8af530c7ce21b6',
+    # api_key: ENV.fetch('MAILGUN_API_KEY'),
+    domain: 'sandbox50c6553b84594392b9f43067c24a42a0.mailgun.org'
+    # domain: ENV.fetch('MAILGUN_DOMAIN')
+  }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

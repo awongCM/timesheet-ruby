@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rack-cache'
+# Mailgun for emails
+gem 'mailgun-ruby', '~>1.1.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
