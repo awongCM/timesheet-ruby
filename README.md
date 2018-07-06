@@ -21,7 +21,10 @@ Business Timesheet application built in ROR
 
 ## History
 
-TODO: Write history
+Version 1.0
+* User authentication logon is enabled.
+* User/Employee can submit their own timesheets
+* User/Employee/Supervisor can view their reported timesheets using graph display
 
 ## License
 
