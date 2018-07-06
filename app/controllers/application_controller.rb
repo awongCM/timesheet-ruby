@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # TODO - Authorization Error Handling
-  # rescue_from CanCan::AccessDenied do |exception|
-  #   render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
-  # end
+  include ErrorResponseActions
+  rescue_from CanCan::AccessDenied, :with => :authorization_error
+  rescue_from ActiveRecord::RecordNotFound, :with => :resource_not_found
 
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?

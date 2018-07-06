@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   resources :help, only: [:index]
   
   root to: 'main#index'
+
+  # Catch-all to allow proper HTTP responses for 404, 403 and 505 errors
+  get "*route_not_found.:format", :to => "application#route_not_found"
+  get "*route_not_found",         :to => "application#route_not_found"
 end
