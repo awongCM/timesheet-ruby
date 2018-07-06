@@ -5,7 +5,7 @@
     %title Timesheet Ruby
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-  %body.nav-md{:class=>("login" unless user_signed_in?)}
+  %body.nav-md{:class=>("login" unless user_signed_in?), :id=>"js-body"}
     - if user_signed_in?
       = render "shared/time-display"
       .container.body.clearfix
