@@ -40,4 +40,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## TODOS
 
-ElasticSearch indexing, Admin/Moderator screens/models access, rake tasks, static pages content, internal articles/blog content/email panel, plus other Ruby gems to use, etc
+* ElasticSearch Global Search, 
+* Admin/Moderator screens/models access, 
+* Automation rake tasks, 
+* Static pages content, 
+* Internal articles
+* Blog content
+* Email panel
+* Dockerise and deploy app to Heroku

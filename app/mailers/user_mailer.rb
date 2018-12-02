@@ -1,4 +1,4 @@
-# TODO - furthe email implementation
+# TODO - require further email implementation
 class UserMailer < ApplicationMailer
   default from: 'notifications@example.com'
  
