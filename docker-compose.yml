@@ -2,9 +2,9 @@ version: '3'
 services:
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bundle exec rails s -p 4000 -b '0.0.0.0'
     ports:
-      - "3000:3000"
+      - "4000:4000"
   # TODO for db services
   # db:
   #   image: mariadb
