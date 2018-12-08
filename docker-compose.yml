@@ -5,8 +5,17 @@ services:
     command: bundle exec rails s -p 4000 -b 0.0.0.0
     ports:
       - "4000:4000"
-  # TODO for db services
-  # db:
-  #   image: mariadb
-  #   volumes: 
-  #     - ./dumps/db:/var/lib/mariadb/data
+    # FIXME - get db connection issue resolved
+    links:
+      - db:mysql
+  db:
+    image: mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    environment:
+       MYSQL_DATABASE: "timesheet-ruby_development"
+       MYSQL_USER: "timesheet-ruby"
+       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - "3306:3306"
+    # volumes: 
+    #   - ./dumps/db:/var/lib/mariadb/data
