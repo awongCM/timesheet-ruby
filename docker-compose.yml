@@ -1,9 +1,8 @@
 version: '3'
 services:
-  # why this doesn't work..
   web:
     build: .
-    command: bundle exec rails s -p 4000
+    command: bundle exec rails s -p 4000 -b 0.0.0.0
     ports:
       - "4000:4000"
   # TODO for db services
