@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # TODOS - to scale and refine
   resources :profile
+  resources :email
   resources :timesheet
   resources :reporting
   resources :help, only: [:index]

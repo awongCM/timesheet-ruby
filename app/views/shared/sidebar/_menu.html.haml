@@ -44,6 +44,10 @@
         = link_to(profile_index_path) do
           %i.fa.fa-address-card
           Profile
+      %li
+        = link_to(email_index_path) do
+          %i.fa.fa-address-card
+          Email
       - if can? :manage, Timesheet  
         %li
           -# TODO for supervisors only
