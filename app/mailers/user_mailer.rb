@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to your Timesheet Ruby System')
   end
 
-  # TODO - receive emails
+  # TODO - receive emails yet.. - https://guides.rubyonrails.org/action_mailer_basics.html#receiving-emails
   def receive(email)
     page = Page.find_by(address: email.to.first)
     page.emails.create(
