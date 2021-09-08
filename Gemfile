@@ -71,7 +71,7 @@ gem 'cancancan', '~> 2.0'
 gem 'gentelella-rails'
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
