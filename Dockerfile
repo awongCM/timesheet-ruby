@@ -1,4 +1,4 @@
-FROM ruby:2.5
+FROM ruby:2.6
 RUN apt-get update -yqq
 RUN apt-get install -yqq --no-install-recommends nodejs
 COPY . /usr/src/app/
