@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis'
 gem 'redis-namespace'
-gem 'redis-rack-cache'
+gem 'redis-rack-cache', '>= 2.1.0'
 # Mailgun for emails
 gem 'mailgun-ruby', '~>1.1.6'
 
